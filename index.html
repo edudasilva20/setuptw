@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+
+<html lang="pt">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EDUDASILVA20 // Boot</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&amp;family=M+PLUS+1p:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: #0d0d0d;
+    }
+
+    .loading-screen, .main-content {
+      display: none;
+      width: 100%;
+      height: 100%;
+    }
+
+    .loading-screen.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: #ff003c;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1rem;
+      padding: 2rem;
+    }
+
+    .terminal-line {
+      white-space: pre-wrap;
+      line-height: 1.5;
+      margin-bottom: 0.4rem;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      height: 1em;
+      background-color: #ff003c;
+      animation: blink 1s step-start infinite;
+      vertical-align: bottom;
+      margin-left: 2px;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      background: #111;
+      border-bottom: 1px solid #ff003c33;
+      flex-wrap: wrap;
+    }
+
+    .tabs button {
+      background: none;
+      border: none;
+      padding: 1rem 2rem;
+      cursor: pointer;
+      color: #f8f8f8;
+      font-size: 1rem;
+      border-bottom: 3px solid transparent;
+      transition: 0.3s;
+    }
+
+    .tabs button:hover,
+    .tabs button.active {
+      border-color: #ff003c;
+      color: #ff003c;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    .section h2 {
+      color: #ff003c;
+      font-size: 1.4rem;
+      border-bottom: 1px solid #ff003c;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .item {
+      margin: 0.5rem 0;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    .item::before {
+      content: ">";
+      position: absolute;
+      left: 0;
+      color: #ffffff88;
+    }
+
+    .links a {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.7rem 1.2rem;
+      background-color: transparent;
+      color: #f8f8f8;
+      border: 1px solid #ff003c;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .links a:hover {
+      background-color: #ff003c;
+      color: #000;
+    }
+
+    .seal {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      font-size: 0.8rem;
+      color: #ff003c88;
+      font-weight: bold;
+      transform: rotate(-10deg);
+      border: 1px solid #ff003c55;
+      padding: 4px 8px;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem 1rem;
+      background: #0d0d0d;
+      border-bottom: 1px solid #ff003c44;
+    }
+
+    header h1 {
+      color: #ff003c;
+      font-size: 2.5rem;
+      margin-bottom: 0.3rem;
+    }
+
+    header p {
+      color: #cccccc;
+      font-size: 1rem;
+      letter-spacing: 1px;
+    }
+    .arrow-link {
+  color: #ff003c;
+  text-decoration: none;
+  margin-left: 8px;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+.arrow-link:hover {
+  transform: translateX(5px);
+  color: #fff;
+}
+
+  
+.tab-content, .section, .item {
+  color: #f8f8f8 !important;
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&amp;display=swap" rel="stylesheet"/></head>
+<body>
+<div class="loading-screen active" id="loading">
+<div class="terminal-line" id="line0">&gt; iniciar_sessao --utilizador EDUDASILVA20</div>
+</div>
+<div class="main-content" id="main">
+<header>
+<h1>Setup </h1>
+<p>terminal estável // 不安定</p>
+</header>
+<div class="tabs">
+<button class="tablink" onclick="openTab(event, 'terminal')">Terminal</button>
+<button class="tablink" onclick="openTab(event, 'pc')">PC</button>
+<button class="tablink" onclick="openTab(event, 'monitores')">Monitores</button>
+<button class="tablink" onclick="openTab(event, 'perifericos')">Periféricos</button>
+<button class="tablink" onclick="openTab(event, 'links')">Links</button>
+</div>
+<div class="tab-content" id="terminal">
+<div class="section">
+<h2>Terminal</h2>
+<div class="item">Nome: Eduardo</div>
+<div class="item">Código: EDUDASILVA20</div>
+<div class="item">Estado: Estável com falhas intermitentes</div>
+<div class="item">Mensagem: Mekié aleijados. O controlo é meu.</div>
+</div>
+</div>
+<div class="tab-content" id="pc">
+  <div class="section">
+    <h2>PC</h2>
+    <div class="item">GPU: NVIDIA RTX 3060 Ti <a href="https://www.nvidia.com/pt-br/geforce/graphics-cards/30-series/rtx-3060-3060ti/" target="_blank" class="arrow-link">→</a></div>
+    <div class="item">CPU: Intel i7-10700F <a href="https://www.intel.la/content/www/xl/es/products/sku/199318/intel-core-i710700f-processor-16m-cache-up-to-4-80-ghz/specifications.html" target="_blank" class="arrow-link">→</a></div>
+    <div class="item">Motherboard: MSI MAG B560M Bazooka <a href="https://www.msi.com/Motherboard/MAG-B560M-BAZOOKA" target="_blank" class="arrow-link">→</a></div>
+    <div class="item">RAM: Corsair Vengeance 2x16GB DDR4 3200MHz <a href="https://www.corsair.com/pt/pt/p/memory/cmk32gx4m2e3200c16/vengeancea-lpx-32gb-2-x-16gb-ddr4-dram-3200mhz-c16-memory-kit-black-cmk32gx4m2e3200c16" target="_blank" class="arrow-link">→</a></div>
+    <div class="item">Cooler: ARCTIC Freezer 34 eSports DUO <a href="https://www.arctic.de/en/Freezer-34-eSports-DUO/ACFRE00063A" target="_blank" class="arrow-link">→</a></div>
+    <div class="item">Fonte: Seasonic Focus GX-550W 80+ Gold <a href="https://seasonic.com/focus-gx/" target="_blank" class="arrow-link">→</a></div>
+  </div>
+</div>
+
+<div class="tab-content" id="monitores">
+  <div class="section">
+    <h2>Monitores</h2>
+    <div class="item">LG UltraGear QHD – 31.5”, 165Hz, 1ms <a href="https://www.lg.com/pt/monitores/gaming/32gn650-b/" target="_blank" class="arrow-link">→</a></div>
+    <div class="item">Newskill Icarus QHD – 27”, 165Hz, 1ms <a href="https://www.newskillgaming.com/en/newskill-icarus-rgb-gaming-monitor-27-qhd-ic27qrc-refurbished" target="_blank" class="arrow-link">→</a></div>
+    <div class="item">Samsung FHD – 27”, 75Hz, 5ms <a href="https://www.samsung.com/us/computing/monitors/curved/samsung-27-curved-led-monitor-lc27f398fwnxza/" target="_blank" class="arrow-link">→</a></div>
+  </div>
+</div>
+
+<div class="tab-content" id="perifericos">
+  <div class="section">
+    <h2>Periféricos</h2>
+    <div class="item">Teclado: Montech Freedom (Hot-swap, RGB) <a href="https://www.globaldata.pt/teclado-montech-freedom-full-size-hot-swappable-gaterong-pro-20-brown-switch-rgb-pbt-mecanico-pt-freedom-full-pt" target="_blank" class="arrow-link">→</a></div>
+    <div class="item">Rato: Razer Viper <a href="https://www.razer.com/latam-es/gaming-mice/razer-viper-ultimate" target="_blank" class="arrow-link">→</a></div>
+    <div class="item">Microfone: HyperX Solocast <a href="https://row.hyperx.com/pt/products/hyperx-solocast-usb-microphone" target="_blank" class="arrow-link">→</a></div>
+    <div class="item">Headset: KZ ZS10 Pro X <a href="https://kz-audio.com/kz-zs10-pro-x.html" target="_blank" class="arrow-link">→</a></div>
+  </div>
+</div>
+
+<div class="tab-content" id="links">
+<div class="section links">
+<h2>Links</h2>
+<a href="https://discord.gg/exemplo" target="_blank">Discord</a>
+<a href="https://steamcommunity.com/profiles/76561198364269875/" target="_blank">Steam</a>
+<a href="https://www.twitch.tv/edudasilva20" target="_blank">Twitch</a>
+</div>
+</div>
+<div class="seal">EDUDASILVA20 // 登録済</div>
+</div>
+<script>
+  const loadingLines = [
+    "> iniciar_sessao --utilizador EDUDASILVA20",
+    "Acesso autorizado.",
+    "Ligação estável // 不安定",
+    "Mensagem do operador: Mekié aleijados. O controlo é meu.",
+    "",
+    "Terminal pronto. Dados bancarios extraidos com sucesso."
+  ];
+
+  let current = 0;
+  function typeNextLine() {
+    if (current >= loadingLines.length) {
+      document.getElementById("loading").style.display = "none";
+      document.getElementById("main").style.display = "block";
+      document.querySelector(".tablink").click();
+      return;
+    }
+
+    const line = document.createElement("div");
+    line.className = "terminal-line";
+    line.textContent = "";
+    document.getElementById("loading").appendChild(line);
+
+    let char = 0;
+    const interval = setInterval(() => {
+      line.textContent += loadingLines[current][char];
+      char++;
+      if (char >= loadingLines[current].length) {
+        clearInterval(interval);
+        current++;
+        setTimeout(typeNextLine, 500);
+      }
+    }, 35);
+  }
+
+  window.onload = () => {
+    setTimeout(typeNextLine, 500);
+  };
+
+  function openTab(evt, tabName) {
+    const tabs = document.getElementsByClassName("tab-content");
+    const tablinks = document.getElementsByClassName("tablink");
+
+    for (let i = 0; i < tabs.length; i++) {
+      tabs[i].classList.remove("active");
+    }
+    for (let i = 0; i < tablinks.length; i++) {
+      tablinks[i].classList.remove("active");
+    }
+
+    document.getElementById(tabName).classList.add("active");
+    evt.currentTarget.classList.add("active");
+
+    history.replaceState(null, null, "?tab=" + tabName);
+  }
+</script>
+</body>
+</html>
